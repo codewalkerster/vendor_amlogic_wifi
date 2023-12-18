@@ -94,6 +94,17 @@ ifeq ($(w2_build),true)
 WIFI_BUILT_MODULES += $(w2_modules)
 endif
 
+WIFI_SUPPORT_DRIVERS += w2l
+w2l_build ?= true
+w2l_modules ?= w2l
+w2l_src_path ?= $(DRIVER_DIR)/amlogic/wifi_comm
+w2l_copy_path ?=
+w2l_build_path ?= w2l/aml_drv
+w2l_args ?= CONFIG_ANDROID_GKI=y CONFIG_AML_ANDROID=14
+ifeq ($(w2l_build),true)
+WIFI_BUILT_MODULES += $(w2l_modules)
+endif
+
 WIFI_SUPPORT_DRIVERS += wifi_comm
 wifi_comm_build ?= true
 wifi_comm_modules ?= wifi_comm
