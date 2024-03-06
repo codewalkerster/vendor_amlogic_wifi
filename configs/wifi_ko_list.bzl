@@ -12,6 +12,9 @@ def module_to_ko(module):
     elif module == "w1":
         wifi_ko_list.append("aml_sdio.ko")
         wifi_ko_list.append("vlsicomm.ko")
+    elif module == "w1u":
+         wifi_ko_list.append("w1u.ko")
+         wifi_ko_list.append("w1u_comm.ko")
     elif module == "w2":
         wifi_ko_list.append("w2_comm.ko")
         wifi_ko_list.append("w2.ko")

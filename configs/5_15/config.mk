@@ -72,6 +72,17 @@ ifeq ($(w1_build),true)
 WIFI_BUILT_MODULES += $(w1_modules)
 endif
 
+WIFI_SUPPORT_DRIVERS += w1u
+w1u_build ?= true
+w1u_modules ?= w1u
+w1u_src_path ?= $(DRIVER_DIR)/amlogic/w1u/
+w1u_copy_path ?=
+w1u_build_path ?= project_w1u/vmac
+w1u_args ?=
+ifeq ($(w1u_build),true)
+WIFI_BUILT_MODULES += $(w1u_modules)
+endif
+
 WIFI_SUPPORT_DRIVERS += w2
 w2_build ?= true
 w2_modules ?= w2
