@@ -110,13 +110,13 @@ $(strip $(1)_drv_modules):
 	@echo "===>wifi: build driver $(strip $(1))"
 	#mkdir -p $(LOCAL_OUT_DIR)/$(LOCAL_KERNEL_TO_ROOT_PATH)/$(call get-drv-build-path,$(1))
 	+$(MAKE) -C $(LOCAL_ROOT_DIR)/$(call get-drv-build-path,$(1)) \
-	 M=../$(call get-drv-build-path,$(1)) \
+	 M=$(REAL_OUTPUR_PATH)/$(call get-drv-build-path,$(1)) \
 	 $(LOCAL_MAKE_ARGS) $(call get-drv-build-args,$(1)) -j$(call get-make-threads) $@
 
 $(strip $(1)_drv_modules_install):
 	@echo "===>wifi: driver $(strip $(1)) modules_install"
 	make -C $(LOCAL_ROOT_DIR)/$(call get-drv-build-path,$(1)) \
-	 M=../$(call get-drv-build-path,$(1)) \
+	 M=$(REAL_OUTPUR_PATH)/$(call get-drv-build-path,$(1)) \
 	 $(LOCAL_INSTALL_ARGS) $(LOCAL_MAKE_ARGS) $(call get-drv-build-args,$(1)) modules_install
 
 $(addsuffix _modules,$(strip $($(1)_modules))): $(strip $(1)_drv_modules)

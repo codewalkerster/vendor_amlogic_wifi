@@ -41,6 +41,15 @@ KERNEL_TO_ROOT_PATH  ?= $(call to-root-path,$(KERNEL_SRC))
 WIFI_SUPPORT_DRIVERS ?= $(EXTRA_WIFI_SUPPORT_DRIVERS)
 ####################################################################################
 
+output1 := ../../driver_modules/wifi_bt/wifi/configs/5_15
+output2 := ../driver_modules/wifi_bt/wifi/configs/5_15
+ifeq ($(M), $(output1))
+REAL_OUTPUR_PATH := ../../
+endif
+ifeq ($(M), $(output2))
+REAL_OUTPUR_PATH := ../
+endif
+
 WIFI_DEFAULT_CONFIG := $(call cur-dir)/config.mk
 MANUFACTURER := $(shell cat $(call cur-dir)/../project.txt)
 
