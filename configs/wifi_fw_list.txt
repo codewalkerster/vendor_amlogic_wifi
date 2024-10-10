@@ -1,0 +1,7 @@
+driver_modules/wifi_bt/wifi/amlogic/w1/wifi/project_w1/vmac/*.txt:wifi/w1/
+driver_modules/wifi_bt/wifi/amlogic/w1u/project_w1u/vmac/*.bin:wifi/
+driver_modules/wifi_bt/wifi/amlogic/w1u/project_w1u/vmac/*.txt:wifi/w1u/
+driver_modules/wifi_bt/wifi/amlogic/w2/common/*.bin:wifi/
+driver_modules/wifi_bt/wifi/amlogic/w2/common/*.txt:wifi/
+driver_modules/wifi_bt/wifi/amlogic/w2l/common/*.bin:wifi/w2l/
+driver_modules/wifi_bt/wifi/amlogic/w2l/common/*.txt:wifi/w2l/
