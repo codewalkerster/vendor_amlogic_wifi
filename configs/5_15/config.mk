@@ -116,17 +116,6 @@ ifeq ($(wifi_comm_build),true)
 WIFI_BUILT_MODULES += $(wifi_comm_modules)
 endif
 
-WIFI_SUPPORT_DRIVERS += w1u
-w1u_build ?= false
-w1u_modules ?= w1u
-w1u_src_path ?= $(DRIVER_DIR)/amlogic/w1u
-w1u_copy_path ?=
-w1u_build_path ?= project_w1u/vmac
-w1u_args ?=
-ifeq ($(w1u_build),true)
-WIFI_BUILT_MODULES += $(w1u_modules)
-endif
-
 WIFI_SUPPORT_DRIVERS += rtl8723du
 rtl8723du_build ?= true
 rtl8723du_modules ?= rtl8723du
