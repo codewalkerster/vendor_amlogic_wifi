@@ -95,7 +95,7 @@ w2_modules ?= w2
 w2_src_path ?= $(DRIVER_DIR)/amlogic/w2
 w2_copy_path ?=
 w2_build_path ?= aml_drv
-w2_args ?= CONFIG_ANDROID_GKI=y CONFIG_AML_ANDROID=14 $(w2_config)
+w2_args ?= CONFIG_ANDROID_GKI=y CONFIG_AML_ANDROID=14 CONFIG_MAGIC_PACKET_EN=y CONFIG_GOOGLE_CAST_EN=y $(w2_config)
 ifeq ($(w2_build),true)
 WIFI_BUILT_MODULES += $(w2_modules)
 endif
