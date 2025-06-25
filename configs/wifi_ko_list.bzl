@@ -123,6 +123,20 @@ def get_wifi_ko_list():
     for module in wifi_modules_list:
         module_to_ko(module)
 
+def driver_files():
+    native.filegroup(
+        name = "driver_files",
+        srcs = native.glob(
+          ["**"],
+          exclude = [
+              "BUILD.bazel",
+              "**/*.bzl",
+              ".git/**",
+          ],
+        ),
+        visibility = ["//visibility:public"],
+    )
+
 get_wifi_ko_list()
 
 

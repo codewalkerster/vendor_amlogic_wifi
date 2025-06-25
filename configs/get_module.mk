@@ -97,10 +97,12 @@ PYTHON_MODULE = [$(foreach m,$(WIFI_BOTH_MODULES),'$(m)',)]
 
 ifeq ($(DRIVER_IN_KERNEL),true)
 all:
+	/bin/bash $(TOP_DIR)/driver_modules/wifi_bt/wifi/configs/wifi_utils.sh $(WIFI_BOTH_MODULES)
 	@echo "wifi_modules_list = $(PYTHON_MODULE)" > $(TOP_DIR)/common14-5.15/driver_modules/wifi_bt/wifi/configs/wifi_module_list.bzl
 	@echo "$(MANUFACTURER)" > $(TOP_DIR)/common14-5.15/driver_modules/wifi_bt/wifi/configs/project.txt
 else
 all:
+	/bin/bash $(TOP_DIR)/driver_modules/wifi_bt/wifi/configs/wifi_utils.sh $(WIFI_BOTH_MODULES)
 	@echo "wifi_modules_list = $(PYTHON_MODULE)" > $(TOP_DIR)/driver_modules/wifi_bt/wifi/configs/wifi_module_list.bzl
 	@echo "$(MANUFACTURER)" > $(TOP_DIR)/driver_modules/wifi_bt/wifi/configs/project.txt
 endif

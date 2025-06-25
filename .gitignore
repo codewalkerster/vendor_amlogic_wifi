@@ -7,4 +7,4 @@ realtek
 unisoc
 atbm
 configs/wifi_module_list.bzl
-
+configs/wifi_files_list.bzl

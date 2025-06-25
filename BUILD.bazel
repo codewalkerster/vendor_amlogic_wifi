@@ -1,5 +1,6 @@
 load("//build/kernel/kleaf:kernel.bzl", "kernel_module")
 load("//driver_modules/wifi_bt/wifi:configs/wifi_ko_list.bzl", "wifi_list")
+load("//driver_modules/wifi_bt/wifi:configs/wifi_files_list.bzl", "WIFI_SRC_FILES")
 
 kernel_module(
     name = "wlan",
@@ -10,7 +11,7 @@ kernel_module(
             "**/*.bzl",
             ".git/**",
         ],
-    ),
+    ) + WIFI_SRC_FILES,
     outs = wifi_list,
     kernel_build = "//common:amlogic",
     visibility = [
