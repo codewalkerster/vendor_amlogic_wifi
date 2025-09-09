@@ -83,13 +83,18 @@ ifeq ($(w1u_build),true)
 WIFI_BUILT_MODULES += $(w1u_modules)
 endif
 
+w2_config ?= CONFIG_MAGIC_PACKET_EN=y
+ifneq ($(DISABLE_AML_WOW_GOOGLE_CAST),true)
+w2_config += CONFIG_AML_WOW_GOOGLE_CAST_EN=y
+endif
+
 WIFI_SUPPORT_DRIVERS += w2
 w2_build ?= true
 w2_modules ?= w2
 w2_src_path ?= $(DRIVER_DIR)/amlogic/w2
 w2_copy_path ?=
 w2_build_path ?= aml_drv
-w2_args ?= CONFIG_ANDROID_GKI=y CONFIG_AML_ANDROID=14 CONFIG_MDNS_OFFLOAD_FEATRUE=n CONFIG_MAGIC_PACKET_EN=y CONFIG_GOOGLE_CAST_EN=y
+w2_args ?= CONFIG_ANDROID_GKI=y CONFIG_AML_ANDROID=14 CONFIG_MAGIC_PACKET_EN=y CONFIG_GOOGLE_CAST_EN=y $(w2_config)
 ifeq ($(w2_build),true)
 WIFI_BUILT_MODULES += $(w2_modules)
 endif
